@@ -1,5 +1,5 @@
-module.exports = displayMessage;
-
-function displayMessage(arg) {
-	console.log(arg);
+function displayMessage(keyword) {
+	console.log(keyword);
 }
+
+module.exports = displayMessage;
