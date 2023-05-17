@@ -1,8 +1,14 @@
-console.log("Welcome to Holberton School, what is your name?");
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-const name = prompt("Your name is: ");
+process.stdin.setEncoding('utf8');
 
-console.log(name);
+process.stdin.on('readable', () => {
+    const username = process.stdin.read();
+    if (username !== null) {
+        process.stdout.write(`Your name is: ${username}`);
+    }
+});
 
-
-
+process.stdin.on('end', () => {
+    process.stdout.write('This important software is now closing\n');
+});
